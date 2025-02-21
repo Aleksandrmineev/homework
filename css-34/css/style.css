@@ -1,0 +1,23 @@
+.text1 {
+    font-family: "Open Sans", serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    font-style: italic;
+}
+.text3 {
+    text-transform: uppercase;
+    text-align: center;
+}
+.text4 {
+    text-decoration: overline wavy blueviolet; 
+    text-shadow: 1px 1px 1px #c5c5c5;
+    color: blueviolet;
+    word-spacing: 30px;
+}
+.text5 {
+    letter-spacing: 5px;
+    text-decoration: underline;
+    text-decoration-thickness: 3px; /* Увеличивает толщину подчеркивания */
+}
+
