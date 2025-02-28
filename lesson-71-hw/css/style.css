@@ -1,0 +1,52 @@
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 5rem;
+    padding-top: 5vh;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+}
+
+/* ====================================================== */
+
+.title {
+    position: relative;
+}
+.title::before, .title::after {
+    content: '';
+    /* всегда используется для создания псевдоэлементов */
+    display: block;
+    /* отображение в виде блока, чтобы была возможность задать ему размеры */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    /* ширина, высота, радиус, граница */
+    position: absolute;
+    /* задает абсолютное значение относительно родителя (в нашем случае title) */
+    top: 50%;
+    transform: translateY(-50%);
+    /* центрирует блок по вертикали */
+}
+
+.title::before {
+    left: -150px;
+    /* от левой границы title на -150 пикселей */
+    background: rgb(250, 99, 99);
+    /* покрасить в красный */
+}
+
+.title::after {
+    right: -150px;
+    /* от правой границы title на -150 пикс. Не понятно, почему на минус 150, а не плюс 150*/
+    background: rgb(94, 94, 238);
+    /* покрасить в синий */
+}

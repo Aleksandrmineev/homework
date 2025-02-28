@@ -1,0 +1,44 @@
+body {
+    background-color: #1e1e22;
+}
+
+.container {
+}
+
+.red,
+.blue, 
+.green {
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    
+}
+
+.red {
+    background: linear-gradient(120deg, #fa2f2f80, #ff620080);
+}
+
+.blue {
+    background: linear-gradient(120deg, #312ffa80, #a200ff80);
+}
+
+.green {
+    background: linear-gradient(120deg, #2ffa4082, #0f742c80);
+}
+
+/* Свойства css почистил от ненужного */
+/* ==================================================== */
+/* Домашка из 3 свойств ниже*/
+/* ==================================================== */
+
+.transform__red {
+    transform: translate(300%, 1000px);
+}
+
+.transform__green {
+    transform: translate(700px, 100px) rotate(120deg);
+}
+
+.transform__blue {
+    transform: translate(478%, -130%) scale(2);
+}
