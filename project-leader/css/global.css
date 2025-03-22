@@ -1,0 +1,156 @@
+:root {
+    --general-text: #FFFFFF;
+    --general-bg: #000000;
+    --alternat-bg: #62666F;
+    --accent-text: #4BD879;
+    --button-text-dark: #000000;
+    --button-text-light: #E7E7E7;
+    --transition: all .4s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", "Arial", sans-serif;
+    line-height: 1.58;
+    font-size: 22px;
+    line-height: 1.58;
+    color: var(--general-text);
+    background: var(--general-bg);
+}
+
+.wrapper {
+    /* цель блока - избежать горизонтального скролла */
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+    /* flex-grow: 1; отталкивает Хедер и Футер от себя по максимуму */
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.title {
+    font-size: clamp(28px, 5vw, 70px);
+    font-weight: 700;
+    line-height: 1.17;
+    background-color: transparent;
+}
+
+.untertitle {
+    font-size: 30px;
+    margin: 10px 20px 40px 20px;
+}
+
+
+/* ----------------- кнопка ----------------- */
+
+.header__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.button1 {
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    border-radius: 20px;
+    padding: 22px 28px;
+    color: white;
+    background-color: transparent;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+
+    /* Постоянная рамка */
+}
+
+.button1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: radial-gradient(circle at left, #E7AA19, #CB6D9C);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: var(--transition);
+}
+
+/* 🌟 Ховер-эффект: лёгкое увеличение и свечение */
+.button1:hover {
+    transform: scale(1.03);
+    box-shadow: 0 3px 49px -3px rgba(226, 128, 72, 0.76);
+    color: white;
+    /* цвет не меняется */
+}
+
+.button1:hover::before {
+    opacity: 1;
+    /* рамка остаётся */
+}
+
+
+.button2 {
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    border-radius: 20px;
+    padding: 22px 28px;
+    color: #000000;
+    background: linear-gradient(45deg,
+            #DC6B30 0%,
+            #E4864F 42%,
+            #FFBE82 73%,
+            #E49031 100%);
+
+    /* Внешнее свечение */
+    box-shadow:
+        0 3px 49px -3px rgba(226, 128, 72, 0.76),
+        /* свечение */
+        0 6px 0 rgba(180, 90, 40, 0.6);
+    /* "основание" кнопки – эффект 3D */
+
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    border: none;
+}
+
+/* Эффект при нажатии */
+.button2:active {
+    transform: translateY(2px);
+    box-shadow:
+        0 1px 25px -5px rgba(226, 128, 72, 0.5),
+        0 2px 0 rgba(150, 70, 20, 0.5);
+}
+
+.button2:hover {
+    transform: scale(1.03);
+    /* лёгкое увеличение */
+    box-shadow: 0 5px 60px 0 rgba(226, 128, 72, 0.9);
+    /* чуть сильнее свечение */
+}

@@ -1,0 +1,140 @@
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 10px;
+}
+
+.header__inner img {
+    max-width: 162px;
+    height: auto;
+    display: block;
+}
+
+/* ----------------- переключатель языка ----------------- */
+.language-dropdown {
+    position: relative;
+}
+
+.language-dropdown__toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--general-text);
+    font-size: 16px;
+}
+
+.language-dropdown__toggle img {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.language-dropdown__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1e1e1e;
+    border-radius: 6px;
+    padding: 5px 0;
+    display: none;
+    flex-direction: column;
+    min-width: 100%;
+    z-index: 10;
+}
+
+.language-dropdown__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.language-dropdown__item:hover {
+    background: #333;
+}
+
+.language-dropdown__item img {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Показываем список при наведении */
+.language-dropdown:hover .language-dropdown__list {
+    display: flex;
+}
+
+/* ----------------- меню ----------------- */
+
+.nav_list {
+    display: flex;
+    gap: 98px;
+    list-style: none;
+}
+
+.nav_list a {
+    display: inline-block;
+    padding: 10px 0px; /* увеличивает кликабельную область */
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.nav_list a.active {
+    background: radial-gradient(circle at left, #E7AA19, #CB6D9C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+/* Иконка звезды у активного пункта */
+.nav_list a.active::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
+    background-image: url('../img/icons/star.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Ховер-эффект для активного пункта */
+.nav_list a.active:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+/* Анимация звезды при наведении на активный пункт */
+.nav_list a.active:hover::after {
+    transform: rotate(15deg) scale(1.1);
+    filter: drop-shadow(0 0 4px #E7AA19);
+}
+
+.list_item a {
+    color: #ffffff;
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+/* Ховер эффект для всех пунктов меню */
+.list_item a:hover {
+    background: radial-gradient(circle at left, #E7AA19, #CB6D9C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

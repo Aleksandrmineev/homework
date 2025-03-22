@@ -1,0 +1,359 @@
+@import "reset.css";
+@import "global.css";
+@import "header.css";
+
+
+/* ============================================================== */
+.hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 160px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    top: 0px;
+    left: 60vw;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/content/hero-Hand-iPhone.png');
+    background-size: 50vw;
+    background-repeat: no-repeat;
+    background-position: top left;
+    z-index: -1;
+    pointer-events: none;
+
+    /* ✨ Свечение по контуру */
+    filter: drop-shadow(0 0 250px rgba(152, 194, 105, 0.4)) drop-shadow(0 0 250px rgba(158, 223, 182, 0.2));
+
+    transition: filter 0.5s ease;
+}
+
+.hero__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hero-timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.10);
+    /* полупрозрачный белый фон */
+    border-radius: 19px;
+    padding: 20px 40px 20px 20px;
+    /* можно настроить под контент */
+}
+
+.hero-timer__info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-timer img {
+    display: block;
+    max-width: 80px;
+    height: auto;
+}
+
+.hero-timer__title h4,
+.hero-timer__title p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.hero-timer__title h4 {
+    font-weight: 500;
+}
+
+
+.hero-timer__wrapper {
+    width: 262px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: "Montserrat", sans-serif;
+}
+
+.hero-timer__wrapper span {
+    font-size: 32px;
+    /* крупные цифры */
+    font-weight: 400;
+}
+
+.hero-timer__wrapper small {
+    font-size: 16px;
+    /* маленькие подписи д/ч/м/с */
+    color: white;
+    font-weight: 400;
+    margin-left: 4px;
+}
+
+
+
+.hero-top5 {
+    margin: 20px 20px;
+}
+
+.hero-top5__title {
+    position: relative;
+    max-width: 100%;
+    font-size: 72px;
+    max-width: 1003px;
+    background-color: transparent;
+}
+
+.hero-top5__users {
+    margin-top: 50px;
+}
+
+.hero-top5__users-text {
+    max-width: 435px;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+/* =====================Кнопки===================== */
+
+.hero__buttons {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    max-width: 800px;
+    background: transparent;
+}
+
+.hero__button-dark {
+    position: relative;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.58;
+    border-radius: 20px;
+    padding: 35px 90px 35px 30px;
+    color: #000000;
+    font-size: 700;
+    background: linear-gradient(45deg,
+            #DC6B30 0%,
+            #E4864F 42%,
+            #FFBE82 73%,
+            #E49031 100%);
+    box-shadow:
+        0 3px 49px -3px rgba(226, 128, 72, 0.76),
+        /* свечение */
+        0 6px 0 rgba(180, 90, 40, 0.6);
+    /* "основание" кнопки – эффект 3D */
+
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    border: none;
+}
+
+.hero__button-dark::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    transform: translateY(-50%);
+    width: 120px;
+    height: 120px;
+    background-image: url('../img/content/check-list.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+
+/* Эффект при нажатии */
+.hero__button-dark:active {
+    transform: translateY(2px);
+    box-shadow:
+        0 1px 25px -5px rgba(226, 128, 72, 0.5),
+        0 2px 0 rgba(150, 70, 20, 0.5);
+}
+
+.hero__button-dark:hover {
+    transform: scale(1.03);
+    /* лёгкое увеличение */
+    box-shadow: 0 5px 60px 0 rgba(226, 128, 72, 0.9);
+    /* чуть сильнее свечение */
+}
+
+.hero__button-light {
+    position: relative;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.58;
+    border-radius: 20px;
+    padding: 35px 100px;
+    color: white;
+    background-color: transparent;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+
+    /* Постоянная рамка */
+}
+
+.hero__button-light::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: radial-gradient(circle at left, #E7AA19, #CB6D9C);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: var(--transition);
+}
+
+/* 🌟 Ховер-эффект: лёгкое увеличение и свечение */
+.hero__button-light:hover {
+    transform: scale(1.03);
+    box-shadow: 0 3px 49px -3px rgba(226, 128, 72, 0.76);
+    color: white;
+    /* цвет не меняется */
+}
+
+.hero__button-light:hover::before {
+    opacity: 1;
+    /* рамка остаётся */
+}
+
+
+.hero-top5__users {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-catalog {}
+
+.hero-catalog p {
+    text-align: center;
+    margin-top: 23px;
+    margin-bottom: 34px;
+}
+
+.hero-catalog__title {
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+/* =====================Слайдер===================== */
+
+
+.hero-slider {
+    margin: 50px 0;
+    padding: 20px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.slide1 {
+    width: 144px;
+    height: 144px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 57px auto 0 auto;
+}
+
+.slide2 {
+    width: 144px;
+    height: 144px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.slide1 img,
+.slide2 img {
+    width: 120px; /* адаптируй при необходимости */
+    height: auto;
+    object-fit: contain;
+}
+
+.swiper-slide span {
+    color: #4BD879;
+    font-size: 30px;
+}
+
+.hero-slider__summa {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    max-width: 124px;
+    margin: 0 auto;
+}
+.button3 {
+    position: relative;
+    display: block;
+    margin: 36px auto;
+    max-width: 376px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 20px;
+    padding: 22px 28px;
+    color: #000000;
+    background: linear-gradient(45deg,
+            #DC6B30 0%,
+            #E4864F 42%,
+            #FFBE82 73%,
+            #E49031 100%);
+
+    /* Внешнее свечение */
+    box-shadow:
+        0 3px 49px -3px rgba(226, 128, 72, 0.76),
+        /* свечение */
+        0 6px 0 rgba(180, 90, 40, 0.6);
+    /* "основание" кнопки – эффект 3D */
+
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    border: none;
+}
+
+/* Эффект при нажатии */
+.button3:active {
+    transform: translateY(2px);
+    box-shadow:
+        0 1px 25px -5px rgba(226, 128, 72, 0.5),
+        0 2px 0 rgba(150, 70, 20, 0.5);
+}
+
+.button3:hover {
+    transform: scale(1.03);
+    /* лёгкое увеличение */
+    box-shadow: 0 5px 60px 0 rgba(226, 128, 72, 0.9);
+    /* чуть сильнее свечение */
+}

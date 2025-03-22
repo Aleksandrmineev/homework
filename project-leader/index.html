@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main: Leader Classic</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="container">
+                <div class="header__inner">
+                    <!-- Логотип -->
+                    <a href="/">
+                        <img src="img/icons/header-logo.svg" alt="logo">
+                    </a>
+                    <!-- Блок переключателя языка -->
+                    <div class="language-dropdown">
+                        <button class="language-dropdown__toggle">
+                            <img src="img/icons/header-ru.svg" alt="RU" />
+                            RU
+                            <svg class="language-dropdown__arrow" width="12" height="12" viewBox="0 0 24 24"
+                                fill="none">
+                                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <ul class="language-dropdown__list">
+                            <li>
+                                <a href="#" class="language-dropdown__item">
+                                    <img src="img/icons/header en.png" alt="EN" />
+                                    EN
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Блок навигации -->
+                    <nav class="nav">
+                        <ul class="nav_list">
+                            <li class="list_item"><a href="#">Тарифы</a></li>
+                            <li class="list_item"><a href="#">Бонус</a></li>
+                            <li class="list_item"><a href="#">Реферальная</a></li>
+                            <li class="list_item"><a href="#" class="active">Контакты</a></li>
+                        </ul>
+                    </nav>
+                    <!-- Блок кнопок -->
+                    <div class="header__button">
+                        <div class="button1"><a href="#">Войти</a></div>
+                        <div class="button2"><a href="#">Открыть счет</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero">
+            <div class="container">
+                <div class="hero__inner">
+                    <div class="hero-timer">
+                        <div class="hero-timer__info">
+                            <img src="img/content/hero-geshenk.png" alt="">
+                            <div class="hero-timer__title">
+                                <h4>Станьте миллионером с Leader Classic</h4>
+                                <p>Откройте счет, инвестируйте в фонды Leader Classic и получите шанс выиграть один из
+                                    100 000 000 ₽</p>
+                            </div>
+                        </div>
+                        <div id="timer" class="hero-timer__wrapper">
+                            <div><span id="days">00</span><small>д</small></div>
+                            <div><span id="hours">00</span><small>ч</small></div>
+                            <div><span id="minutes">00</span><small>м</small></div>
+                            <div><span id="seconds">00</span><small>с</small></div>
+                        </div>
+                    </div>
+
+                    <div class="hero-top5">
+                        <div class="hero-top5__title title">
+                            <h1>ТОП-5 акций
+                                <br>
+                                с доходностью до 10-30%
+                                <br>
+                                уже в 2022 году
+                            </h1>
+                        </div>
+                        <p class="untertitle">
+                            • Открытие брокерского счета за 5 минут без визита в офис<br>
+                            • Доступ к ценным бумагам с любого устройства<br>
+                            • Поддержка в чате 24/7
+                        </p>
+                        <div class="hero__buttons">
+                            <div class="hero__button-dark"><a href="#">Скачать ТОП-5 акций</a></div>
+                            <div class="hero__button-light"><a href="#">Открыть счёт</a></div>
+                        </div>
+                        <div class="hero-top5__users">
+                            <img src="img/content/hero-leute.png" alt="">
+                            <p class="hero-top5__users-text">Сейчас инвестируют <br> 100 000+ пользователей</p>
+                        </div>
+                    </div>
+                    <div class="hero-catalog">
+                        <h2 class="hero-catalog__title title">Ваши деньги <br>способны на большее</h2>
+                        <p>Сколько бы вы заработали, инвестируй <strong>100 000 ₽</strong> <br> год назад?</p>
+                        <div class="hero-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="slide1"><img src="img/icons/hero-tesla.svg" alt="Слайд 1"></div>
+                                    <span>+83.97%</span>
+                                    <div class="hero-slider__summa">+72.000₽</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide2"><img src="img/icons/hero-amazon.svg" alt="Слайд 1"></div>
+                                    <span>+4.11%</span>
+                                    <div class="hero-slider__summa">+72.000₽</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide1"><img src="img/icons/hero-apple.svg" alt="Слайд 1"></div>
+                                    <span>+26.36%</span>
+                                    <div class="hero-slider__summa">+72.000₽</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide2"><img src="img/icons/hero-yandex.svg" alt="Слайд 1"></div>
+                                    <span>+17.19%</span>
+                                    <div class="hero-slider__summa">+72.000₽</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide1"><img src="img/icons/hero-facebook.svg" alt="Слайд 1"></div>
+                                    <span>+31.32%</span>
+                                    <div class="hero-slider__summa">+72.000₽</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide2"><img src="img/icons/hero-microsoft.svg" alt="Слайд 1"></div>
+                                    <span>+38.99%</span>
+                                    <div class="hero-slider__summa">+72.000₽</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide1"><img src="img/icons/hero-tesla.svg" alt="Слайд 1"></div>
+                                    <span>+83.97%</span>
+                                    <div class="hero-slider__summa">+72.000₽</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide2"><img src="img/icons/hero-amazon.svg" alt="Слайд 1"></div>
+                                    <span>+4.11%</span>
+                                    <div class="hero-slider__summa">+72.000₽</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide1"><img src="img/icons/hero-apple.svg" alt="Слайд 1"></div>
+                                    <span>+26.36%</span>
+                                    <div class="hero-slider__summa">+72.000₽</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide2"><img src="img/icons/hero-yandex.svg" alt="Слайд 1"></div>
+                                    <span>+17.19%</span>
+                                    <div class="hero-slider__summa">+72.000₽</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide1"><img src="img/icons/hero-facebook.svg" alt="Слайд 1"></div>
+                                    <span>+31.32%</span>
+                                    <div class="hero-slider__summa">+72.000₽</div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="slide2"><img src="img/icons/hero-microsoft.svg" alt="Слайд 1"></div>
+                                    <span>+38.99%</span>
+                                    <div class="hero-slider__summa">+72.000₽</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>И еще более 10 000 других ценных бумаг доступно в каталоге</p>
+                        <div class="button3"><a href="#">Получить каталог</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main">
+            <div class="container">
+                <div class="main__inner"></div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
