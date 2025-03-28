@@ -1,0 +1,294 @@
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px 10px;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__logo {
+    width: auto;
+    height: auto;
+}
+.header__company {
+    font-family: "Latin CT Wide";
+    font-size: 12px;
+    line-height: 1.18;
+    width: 180px;
+    height: auto;
+}
+
+
+/* menu-close — плавающее, вне потока */
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+}
+
+.body--opened-menu .menu-close {
+    display: block;
+}
+
+.header__inner img {
+    max-width: 162px;
+    height: auto;
+    display: block;
+}
+
+/* ----------------- бургер ----------------- */
+/* Скрываем бургер по умолчанию */
+.burger-icon {
+    display: none;
+}
+
+
+.burger-icon img {
+    width: 32px;
+    height: 32px;
+}
+
+.menu-close {
+    display: none;
+    /* скрыто на больших экранах */
+}
+
+/* Скрыть меню на мобилках */
+.nav {
+    transition: transform 0.3s ease;
+}
+
+
+/* ----------------- переключатель языка ----------------- */
+.language-dropdown {
+    position: relative;
+    margin: 0 20px;
+}
+
+.language-dropdown__toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--general-text);
+    font-size: 16px;
+}
+
+.language-dropdown__toggle img {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.language-dropdown__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1e1e1e;
+    border-radius: 6px;
+    padding: 5px 0;
+    display: none;
+    flex-direction: column;
+    min-width: 100%;
+    z-index: 10;
+}
+
+.language-dropdown__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.language-dropdown__item:hover {
+    background: #333;
+}
+
+.language-dropdown__item img {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Показываем список при наведении */
+.language-dropdown:hover .language-dropdown__list {
+    display: flex;
+}
+
+/* ----------------- меню ----------------- */
+
+
+.nav_list {
+    display: flex;
+    gap: 4vw;
+    list-style: none;
+    margin: 0 20px;
+}
+
+.nav_list a {
+    display: inline-block;
+    padding: 10px 0px;
+    /* увеличивает кликабельную область */
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.nav_list a.active {
+    background: radial-gradient(circle at left, #E7AA19, #CB6D9C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+/* Иконка звезды у активного пункта */
+.nav_list a.active::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 6px;
+    background-image: url('../img/icons/star.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Ховер-эффект для активного пункта */
+.nav_list a.active:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+/* Анимация звезды при наведении на активный пункт */
+.nav_list a.active:hover::after {
+    transform: rotate(15deg) scale(1.1);
+    filter: drop-shadow(0 0 4px #E7AA19);
+}
+
+.list_item a {
+    color: #ffffff;
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+/* Ховер эффект для всех пунктов меню */
+.list_item a:hover {
+    background: radial-gradient(circle at left, #E7AA19, #CB6D9C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* ----------------- кнопка ----------------- */
+
+.header__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 0 20px;
+}
+
+.hf__button1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: radial-gradient(circle at left, #E7AA19, #CB6D9C);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: var(--transition);
+}
+
+/* 🌟 Ховер-эффект: лёгкое увеличение и свечение */
+.hf__button1:hover {
+    transform: scale(1.03);
+    box-shadow: 0 3px 49px -3px rgba(226, 128, 72, 0.76);
+    color: white;
+    /* цвет не меняется */
+}
+
+.hf__button1:hover::before {
+    opacity: 1;
+    /* рамка остаётся */
+}
+
+.hf__button2 {
+    /* Это кнопка с градиентной заливкой и жирным черным шрифтом */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    border-radius: 20px;
+    padding: 22px 28px;
+    height: 106px;
+    width: 380px;
+    color: #000000;
+    background: linear-gradient(45deg,
+            #DC6B30 0%,
+            #E4864F 42%,
+            #FFBE82 73%,
+            #E49031 100%);
+    box-shadow:
+        0 3px 49px -3px rgba(226, 128, 72, 0.76),
+        /* свечение */
+        0 6px 0 rgba(180, 90, 40, 0.6);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Эффект при нажатии */
+.hf__button2:active {
+    transform: translateY(2px);
+    box-shadow:
+        0 1px 25px -5px rgba(226, 128, 72, 0.5),
+        0 2px 0 rgba(150, 70, 20, 0.5);
+}
+
+.hf__button2:hover {
+    transform: scale(1.03);
+    /* лёгкое увеличение */
+    box-shadow: 0 5px 60px 0 rgba(226, 128, 72, 0.9);
+    /* чуть сильнее свечение */
+}
+
+
+.hf__button1,
+.hf__button2 {
+    width: 200px;
+    height: 60px;
+}
