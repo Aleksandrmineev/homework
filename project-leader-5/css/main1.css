@@ -1,0 +1,625 @@
+.main__tarife-title1 {
+    margin: 50px 0 50px;
+    text-align: center;
+}
+
+.main__tarife-grosbild-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 11vh;
+}
+
+.tarife-feature {
+    padding: 10px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarife-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 50px rgba(255, 190, 130, 0.4);
+}
+
+
+.tarife-feature svg {
+    width: clamp(60px, 10vw, 120px);
+    height: clamp(60px, 10vw, 120px);
+    color: white;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tarife-feature:hover svg {
+    color: #FFBE82;
+    /* новый цвет при наведении */
+    transform: scale(1.1);
+    /* лёгкое увеличение */
+}
+
+
+.tarife-feature h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.tarife-feature p {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #ccc;
+}
+
+.tarife-feature:hover h3 {
+    color: #FFBE82; /* тёплый акцентный цвет, можешь поменять */
+    transition: color 0.3s ease;
+}
+
+.tarife-feature:hover p {
+    color: #FFBE82; /* делаем текст ярче при наведении */
+    transition: color 0.3s ease;
+}
+
+
+
+/* ==================================== */
+.main__tarife-title2 {
+    text-align: center;
+    margin-bottom: 2.3vh;
+}
+
+.main__tarife-untertitle {
+    text-align: center;
+    margin: 0 auto 4.7vh;
+    max-width: 579px;
+    font-size: 25px;
+
+}
+
+.main__tarife-schritt {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+    width: 100%;
+    padding: 0 1vw;
+}
+
+.main__tarife-schritt1,
+.main__tarife-schritt2,
+.main__tarife-schritt3 {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 40px;
+    align-items: flex-start;
+    /* ← выравнивание по левому краю */
+    text-align: left;
+    /* ← выравнивание текста по левому краю */
+}
+
+.main__tarife-schritt1 span,
+.main__tarife-schritt2 span,
+.main__tarife-schritt3 span {
+    display: block;
+    max-width: 377px;
+    word-wrap: break-word;
+}
+
+.main__tarife-schritt1::after,
+.main__tarife-schritt2::after,
+.main__tarife-schritt3::after {
+    content: "";
+    position: absolute;
+    top: 25%;
+    right: 0.1%;
+    transform: translateY(-50%);
+    width: 190px;
+    height: 190px;
+    filter: brightness(1.7);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+
+.main__tarife-schritt1::after {
+    background-image: url('../img/decor/inv-1.svg');
+}
+
+.main__tarife-schritt2::after {
+    background-image: url('../img/decor/inv-2.svg');
+}
+
+.main__tarife-schritt3::after {
+    background-image: url('../img/decor/inv-3.svg');
+}
+
+.main__tarife-step-title {
+    text-transform: uppercase;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.main__tarife-step-subtitle {
+    font-size: clamp(16px, 2.2vw, 35px);
+    /* адаптивный размер шрифта */
+    font-weight: 700;
+    margin-bottom: 30px;
+    word-wrap: break-word;
+    /* если вдруг длинное слово */
+    overflow-wrap: break-word;
+    /* для большей совместимости */
+    max-width: 100%;
+    /* не вылезает за пределы ячейки */
+}
+
+.main__tarife-step-description {
+    font-size: clamp(14px, 2.2vw, 20px);
+    font-weight: 300;
+}
+
+/* ====================================== */
+
+.main__bonus {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 23vh;
+    padding-bottom: 19.7vh;
+    background-image: url('../img/decor/bonus.svg');
+    background-repeat: no-repeat;
+    background-position: calc(50% + 0px) calc(50% - 210px);
+    /* от центра */
+    background-size: 790px auto;
+}
+
+.main__bonus::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    /* центрируем */
+    width: 500px;
+    height: 700px;
+    background-image: url('../img/decor/bonus-Santa-1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 -50px 250px rgba(152, 194, 105, 1)) drop-shadow(0 50px 250px rgba(158, 223, 182, 1));
+}
+
+.main__bonus::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -27%;
+    transform: translate(-50%, -50%);
+    /* центрируем */
+    width: 500px;
+    height: 900px;
+    background-image: url('../img/decor/bonus-Santa-2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 0;
+    pointer-events: none;
+    filter: drop-shadow(0 -50px 250px rgba(152, 194, 105, 1)) drop-shadow(0 50px 250px rgba(158, 223, 182, 1));
+}
+
+.main__bonus-title3 {
+    max-width: 675px;
+    text-align: center;
+    margin-bottom: 33px;
+}
+
+.main__bonus-untertitle {
+    font-size: 25px;
+    max-width: 730px;
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.main__bonus-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ============================================ */
+
+.main__clients {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main__clients-title {
+    text-align: center;
+    max-width: 980px;
+    margin-bottom: 6.7vh;
+}
+
+.main__clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 21px;
+}
+
+.main__clients-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+
+    padding: clamp(20px, 4vw, 50px) clamp(15px, 3vw, 30px) clamp(20px, 3vw, 30px) clamp(20px, 4vw, 44px);
+
+    background: #1B1B1C;
+    border-radius: clamp(4px, 1vw, 8px);
+
+    width: 100%;
+    height: 100%;
+}
+
+.main__clients-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.main__clients-img img {
+    max-width: 48px;
+    max-height: 48px;
+    width: 100%;
+    height: 100%;
+}
+
+.main__clients-itemtitle {
+    display: block;
+    font-size: clamp(14px, 2.2vw, 26px);
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.main__clients-subtitle {
+    font-size: clamp(12px, 2.2vw, 22px);
+    display: block;
+    font-weight: 300;
+    line-height: 1.56;
+}
+
+.main__clients-description {
+    align-self: flex-end;
+    font-size: 18px;
+}
+
+.main__clients-description a {
+    text-decoration: underline;
+}
+
+/* =================================================== */
+.main__bag {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(690px, 1fr));
+    gap: clamp(20px, 5vw, 100px);
+
+}
+
+.main__bag-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* по вертикали */
+    align-items: center;
+    /* по горизонтали */
+    text-align: center;
+    height: 100%;
+    background-image: url('../img/content/wahl-skala.svg');
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: calc(50% + 0px) calc(50% - -10px);
+    /* от центра */
+    background-size: auto auto;
+    padding: 18vh 0;
+}
+
+.main__bag-left-untertitle {
+    margin: 0;
+}
+
+.main__bag-left-title {
+    font-size: 65px;
+    font-weight: 500;
+}
+
+.main__bag-left-description {
+    font-size: 18px;
+    color: #C5C5C5;
+    padding: 5px 28px;
+    border-radius: 100px;
+    background: linear-gradient(to bottom right, rgba(66, 89, 74, 0.4), rgba(101, 204, 125, 0.22));
+    margin-top: 27px;
+}
+
+.main__bag-left-down {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* ← прижимает всё влево */
+    text-align: left;
+    /* ← для текстов */
+    margin-top: 111px;
+}
+
+.main__bag-left-down1,
+.main__bag-left-down2 {
+    position: relative;
+    margin: 15px 0;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.main__bag-left-down1::before,
+.main__bag-left-down2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    /* или другое нужное положение */
+    left: -65px;
+    width: 42px;
+    /* размеры изображения */
+    height: 42px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main__bag-left-down1::before {
+    background-image: url('../img/icons/wahl-Ellipse1.svg');
+}
+
+.main__bag-left-down2::before {
+    background-image: url('../img/icons/wahl-Ellipse2.svg');
+}
+
+
+.main__bag-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: flex-start;
+    padding: 18vh 0;
+}
+
+.main__bag-right-title {
+    font-weight: 500;
+    font-size: clamp(30px, 2.2vw, 65px);
+    margin-top: 8vh;
+    margin-bottom: 18px;
+}
+
+.main__bag-right-untertitle {
+    margin: 0;
+    max-width: 510px;
+}
+
+.main__bag-right-button {
+    margin-top: 50px;
+}
+
+/* ==================================================== */
+.main__indicators {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+    margin-bottom: 18vh;
+}
+
+.main__indicator-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.main__indicator-title {
+    display: inline-block;
+    background: linear-gradient(to bottom right, #65CA7C, #4F815C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.main__indicator-text {
+    font-size: clamp(14px, 2.2vw, 26px);
+}
+
+/* ======================================================= */
+
+.main__device {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.main__device-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 колонки */
+    margin-bottom: 47px;
+    align-items: flex-start;
+    /* по вертикали */
+    text-align: left;
+    /* текст по левому краю */
+}
+
+.main__device-grid-title {
+    margin: 90px 0 25px 0;
+
+}
+
+.main__device-grid-untertitle {
+    font-size: 25px;
+    font-weight: normal;
+    margin: 0;
+}
+/* =================================== */
+
+.main__platforms {
+    color: #fff;
+    padding: 5vh 5vw;
+  }
+  
+  .platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .platform-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: #1b1b1c;
+    border-radius: 16px;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .platform-card:hover {
+    transform: translateY(-5px);
+    background: #2a2a2c;
+  }
+  
+  .platform-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .platform-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .platform-card p {
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.4;
+  }
+  
+
+/* ======================================================= */
+
+.main__device-app {
+    display: grid;
+    grid-template-columns: 1.215fr 1fr;
+    /* 850 / 700 ≈ 1.215 */
+    gap: 50px;
+    margin-bottom: 47px;
+    align-items: flex-start;
+    /* по вертикали */
+    text-align: left;
+}
+
+.main__device-left img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    filter: drop-shadow(0 0 150px rgba(101, 202, 124, 0.4));
+    display: block;
+}
+
+
+.main__device-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__device-untertitle {
+    font-size: clamp(14px, 1vw, 25px);
+}
+
+.main__device-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.main__device-button-ios,
+.main__device-button-android {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    width: 245px;
+    height: 70px;
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    padding-left: 24px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.main__device-button-ios a,
+.main__device-button-android a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.main__device-button-ios a::before,
+.main__device-button-android a::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.main__device-button-ios a::before {
+    background-image: url('../img/icons/device-ios.svg');
+}
+
+.main__device-button-android a::before {
+    background-image: url('../img/icons/device-andr.svg');
+}
+
+.main__device-button-ios:hover,
+.main__device-button-android:hover {
+    border-color: #FFD700;
+    /* золотая рамка */
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    /* мягкое свечение */
+    transform: scale(1.03);
+}
+
+/* ========================================= */

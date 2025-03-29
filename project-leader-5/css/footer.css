@@ -1,0 +1,83 @@
+/* ==========================footer============================== */
+
+.footer {
+    background: #202020;
+}
+
+.footer__inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    /* можно настроить расстояние между столбцами */
+    flex-wrap: wrap;
+    /* чтобы на маленьких экранах не ломалось */
+    margin: 93px 20px 115px 20px;
+}
+
+.footer__inner::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70vw;
+    height: 200px;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    box-shadow: 0 0 400px 250px rgba(152, 194, 105, 0.4);
+    pointer-events: none; /* чтобы не мешал кликам */
+    z-index: -1 /* убедись, что он не перекрывает контент */
+}
+
+.footer__info,
+.footer__contact {
+    display: flex;
+    flex-direction: column;
+    /* элементы внутри идут вертикально */
+    gap: 20px;
+    /* отступы между элементами */
+}
+
+.footer__contact p {
+    font-size: 16px;
+}
+
+.footer__info {
+    max-width: 320px;
+}
+.footer__info-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.footer__info-politik,
+.footer__info-politik:visited,
+.footer__info-politik:active,
+.footer__info-politik:hover {
+    text-decoration: underline;
+}
+
+.footer__contact {
+    max-width: 380px;
+    align-items: center;
+    /* выравнивание всех элементов по правому краю */
+    text-align: center;
+    /* выравнивание текста по правому краю */
+}
+
+.footer__contact p {
+    font-size: 16px;
+}
+
+.footer__info-number {
+    font-size: 24px;
+    line-height: 1.4;
+    padding-bottom: 30px;
+}
+
+.footer__info-button {
+    font-weight: 700;
+}
