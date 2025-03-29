@@ -1,0 +1,255 @@
+:root {
+    --general-text: #FFFFFF;
+    --general-bg: #000000;
+    --alternat-bg: #62666F;
+    --accent-text: #4BD879;
+    --button-text-dark: #000000;
+    --button-text-light: #E7E7E7;
+    --transition: all .4s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", "Arial", sans-serif;
+    line-height: 1.58;
+    font-size: 22px;
+    line-height: 1.58;
+    font-weight: 500;
+    color: var(--general-text);
+    background: var(--general-bg);
+}
+
+.wrapper {
+    /* цель блока - избежать горизонтального скролла */
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+    /* flex-grow: 1; отталкивает Хедер и Футер от себя по максимуму */
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1700px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: clamp(28px, 5vw, 70px);
+    font-weight: 700;
+    line-height: 1.17;
+    background-color: transparent;
+}
+
+.untertitle {
+    font-size: clamp(14px, 2.2vw, 30px);
+    margin: 10px 0px 40px 0px;
+}
+
+
+.button1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-weight: 400;
+    line-height: 1;
+
+    border-radius: clamp(8px, 2vw, 20px);
+    padding: clamp(14px, 1.5vw, 22px) clamp(20px, 1.5vw, 28px);
+
+    color: white;
+    background-color: transparent;
+
+    z-index: 1;
+    overflow: hidden;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+
+    height: clamp(50px, 14vw, 106px);
+    width: clamp(160px, 35vw, 380px);
+}
+
+.button1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: radial-gradient(circle at left, #E7AA19, #CB6D9C);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: var(--transition);
+}
+
+/* 🌟 Ховер-эффект: лёгкое увеличение и свечение */
+.button1:hover {
+    transform: scale(1.03);
+    box-shadow: 0 3px 49px -3px rgba(226, 128, 72, 0.76);
+    color: white;
+    /* цвет не меняется */
+}
+
+.button1:hover::before {
+    opacity: 1;
+    /* рамка остаётся */
+}
+
+
+.button2 {
+    /* Это кнопка с градиентной заливкой и жирным черным шрифтом */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    font-size: clamp(14px, 1.5vw, 18px);
+    font-weight: 700;
+    line-height: 1;
+
+    border-radius: clamp(8px, 2vw, 20px);
+    padding: clamp(8px, 1.5vw, 22px) clamp(10px, 1.5vw, 28px);
+
+    height: clamp(50px, 14vw, 106px);
+    width: clamp(160px, 35vw, 380px);
+
+    color: #000000;
+    background: linear-gradient(45deg,
+            #DC6B30 0%,
+            #E4864F 42%,
+            #FFBE82 73%,
+            #E49031 100%);
+    box-shadow:
+        0 3px 49px -3px rgba(226, 128, 72, 0.76),
+        0 6px 0 rgba(180, 90, 40, 0.6);
+
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+
+/* Эффект при нажатии */
+.button2:active {
+    transform: translateY(2px);
+    box-shadow:
+        0 1px 25px -5px rgba(226, 128, 72, 0.5),
+        0 2px 0 rgba(150, 70, 20, 0.5);
+}
+
+.button2:hover {
+    transform: scale(1.03);
+    /* лёгкое увеличение */
+    box-shadow: 0 5px 60px 0 rgba(226, 128, 72, 0.9);
+    /* чуть сильнее свечение */
+}
+
+.button2 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/* ================================ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+}
+
+.modal.open {
+    display: block;
+}
+
+.modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.modal__content {
+    position: relative;
+    max-width: 80vw;
+    max-height: 80vh;
+    margin: 5vh auto;
+    background: #111;
+    color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    overflow-y: auto;
+    z-index: 1001;
+}
+
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.modal__text {
+    margin-top: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+  }
+  
+  .scroll-to-top:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  
+  .scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
